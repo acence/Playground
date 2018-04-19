@@ -9,7 +9,7 @@ var buffer = require('vinyl-buffer');
 var sass = require('gulp-sass');
 var glob = require('glob');
 
-const vendors = ['react', 'react-dom', 'redux', 'react-redux'];
+const vendors = ['axios', 'react', 'react-dom', 'redux', 'react-redux'];
 
 gulp.task('build:js-vendor', () => {
     const b = browserify({
