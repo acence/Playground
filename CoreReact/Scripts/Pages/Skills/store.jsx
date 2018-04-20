@@ -1,6 +1,6 @@
 ﻿import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import skills from './Reducers/skillsReducer'
+import skills from './Reducers/SkillsReducer'
 
 const appReducer = combineReducers({
     skills

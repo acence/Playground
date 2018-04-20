@@ -1,4 +1,4 @@
-﻿import { actionTypes } from './../constants'
+﻿import { actionTypes } from './../Constants'
 import Ajax from './../../../Infrastructure/Ajax'
 
 function getSkills() {

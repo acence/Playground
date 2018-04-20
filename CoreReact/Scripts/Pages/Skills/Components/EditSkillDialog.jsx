@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ModalDialog from './../../../Common/Components/Modal/ModalDialog';
+import ModalDialogHeader from './../../../Common/Components/Modal/ModalDialogHeader';
 
 class EditSkillDialog extends React.Component {
     render() {
@@ -10,7 +11,7 @@ class EditSkillDialog extends React.Component {
         }
         return (
             <ModalDialog>
-                {/*<ModalDialog.Header>title</ModalDialog.Header>*/}
+                <ModalDialogHeader>title</ModalDialogHeader>
                 <div>
                     edit
                 </div>

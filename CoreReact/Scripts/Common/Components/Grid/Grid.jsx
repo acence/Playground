@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
-import { deepCompare } from './../../compareUtils'
+import { deepCompare } from './../../CompareUtils'
 
 class Grid extends React.Component {
     constructor(props) {
@@ -70,8 +70,8 @@ class Grid extends React.Component {
         var self = this;
         return {
             prepareColumns(columns, options) {
-                let icnOnly = kendo.template("<a class='cust-icon-16 k-grid-#= name #' href='\\#' title='#= text #' style='float: left;'><span class='icn-#= iconName #-16'></span>#= text #</a>");
-                //let icnOnly = kendo.template("<a class='cust-icon-16 k-grid-#= name #' href='\\#' title='#= text #' style='float: left;'><span class='icn-#= iconName #-16'></span></a>");
+                let icnOnly = kendo.template("<a class='cust-icon-16 k-grid-#= name #' href='\\#' title='#= text #'><span class='icn-#= iconName #-16'></span>#= text #</a>");
+                //let icnOnly = kendo.template("<a class='cust-icon-16 k-grid-#= name #' href='\\#' title='#= text #'><span class='icn-#= iconName #-16'></span></a>");
                 if (options.showEditButton || options.showDeleteButton) {
                     var commands = [];
                     if (options.showEditButton) {
@@ -88,7 +88,7 @@ class Grid extends React.Component {
                 return columns;
             },
             prepareHeader(options) {
-                let icnAndLabel = kendo.template("<a class='cust-icon-16 k-grid-#= name #' href='\\#' title='#= text #' style='float: left;'><span class='icn-#= iconName #-16'></span>#= iconText #</a>");
+                let icnAndLabel = kendo.template("<a class='cust-icon-16 k-grid-#= name #' href='\\#' title='#= text #'><span class='icn-#= iconName #-16'></span>#= iconText #</a>");
                 if (options.showAddButton) {
                     return [{ name: 'add', text: 'Add', iconName: 'add', template: icnAndLabel, iconText: "Add" }];
                 }

@@ -1,14 +1,14 @@
 ﻿import React from 'react';
 
-class PageLayout extends React.Component {
+class ModalDialogHeader extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
-        return (<div className='pageLayout'>
+        return (<div className='modal-header'>
             {this.props.children}
         </div>);
     }
 };
 
-export default PageLayout;
+export default ModalDialogHeader;

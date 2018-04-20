@@ -1,8 +1,8 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getSkills, editSkill } from './../Actions/skills';
-import { gridColumns } from './../constants';
+import { getSkills, editSkill } from './../Actions/Skills';
+import { gridColumns } from './../Constants';
 import Grid from './../../../Common/Components/Grid/Grid'
 
 class SkillsGrid extends React.Component {
