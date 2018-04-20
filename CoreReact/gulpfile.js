@@ -24,6 +24,10 @@ gulp.task('build:js-vendor', () => {
     gulp.src('./node_modules/jquery/dist/jquery.js')
         .pipe(gulp.dest('./wwwroot/lib'));
 
+    gulp.src('./node_modules/bootstrap/dist/js/bootstrap.js')
+        .pipe(gulp.dest('./wwwroot/lib'));
+
+
     gulp.src('./Scripts/Vendor/kendo.web-2016.2.714.js')
         .pipe(rename('kendo.js'))
         .pipe(gulp.dest('./wwwroot/lib'));
@@ -52,6 +56,9 @@ gulp.task('build:js-app', () => {
 });
 
 gulp.task('build:css-vendor', () => {
+    gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css')
+        .pipe(gulp.dest('./wwwroot/css'));
+
     gulp.src('./Styles/Vendor/kendo.common.css')
         .pipe(rename('kendo.css'))
         .pipe(gulp.dest('./wwwroot/css'));
@@ -76,4 +83,4 @@ var fixNameCSS = function (name) {
 }
 // helper functions
 
-gulp.task('default', ['build:css-sass', 'build:js-app', 'build:js-vendor']);
+gulp.task('default', ['build:css-vendor', 'build:css-sass', 'build:js-app', 'build:js-vendor']);
