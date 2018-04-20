@@ -15,5 +15,11 @@ function getSkillsSuccess(data) {
         skillsList: data
     };
 }
+function editSkill(skill) {
+    return {
+        type: actionTypes.EDIT_SKILL,
+        selectedSkill: skill
+    }
+}
 
-export { getSkills }
+export { getSkills, editSkill }

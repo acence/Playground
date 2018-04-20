@@ -1,2 +1,9 @@
 body {
-  font-size: 10px; }
+  font-family: Arial;
+  font-size: 16px; }
+
+.no-scrollbar .k-grid-header {
+  padding: 0 !important; }
+
+.no-scrollbar .k-grid-content {
+  overflow-y: visible; }

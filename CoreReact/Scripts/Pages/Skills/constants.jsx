@@ -10,9 +10,9 @@
 };
 
 const gridColumns = [
-    { header: 'Name', field: 'name' },
-    { header: 'Short name', field: 'shortName' },
-    { header: 'Category', field: 'category' }
+    { title: 'Name', field: 'name' },
+    { title: 'Short name', field: 'shortName' },
+    { title: 'Category', field: 'category' }
 ];
 
 export {

@@ -1,6 +1,7 @@
 ﻿'use strict';
 
 var gulp = require('gulp');
+var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var browserify = require('browserify');
 var babelify = require('babelify');
@@ -9,7 +10,7 @@ var buffer = require('vinyl-buffer');
 var sass = require('gulp-sass');
 var glob = require('glob');
 
-const vendors = ['axios', 'react', 'react-dom', 'redux', 'react-redux'];
+const vendors = ['axios', 'react', 'react-dom', 'redux', 'react-redux', 'underscore'];
 
 gulp.task('build:js-vendor', () => {
     const b = browserify({
@@ -20,8 +21,15 @@ gulp.task('build:js-vendor', () => {
         b.require(lib);
     });
 
+    gulp.src('./node_modules/jquery/dist/jquery.js')
+        .pipe(gulp.dest('./wwwroot/lib'));
+
+    gulp.src('./Scripts/Vendor/kendo.web-2016.2.714.js')
+        .pipe(rename('kendo.js'))
+        .pipe(gulp.dest('./wwwroot/lib'));
+
     b.bundle()
-        .pipe(source('vendor.js'))
+        .pipe(source('react.js'))
         .pipe(buffer())
         .pipe(gulp.dest('./wwwroot/lib'));
 });
@@ -43,8 +51,13 @@ gulp.task('build:js-app', () => {
     });
 });
 
+gulp.task('build:css-vendor', () => {
+    gulp.src('./Styles/Vendor/kendo.common.css')
+        .pipe(rename('kendo.css'))
+        .pipe(gulp.dest('./wwwroot/css'));
+});
+
 gulp.task('build:css-sass', () => {
-    'use strict';
     return gulp.src('./Styles/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(rename(fixNameCSS))
