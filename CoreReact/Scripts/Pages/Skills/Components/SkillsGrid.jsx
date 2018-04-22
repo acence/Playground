@@ -1,9 +1,10 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getSkills, editSkill } from './../Actions/Skills';
+import { getSkills, openSkillDetailsPopup, openSkillDeletePopup } from './../Actions/Skills';
 import { gridColumns } from './../Constants';
 import Grid from './../../../Common/Components/Grid/Grid'
+import SkillModel from './../Models/SkillModel';
 
 class SkillsGrid extends React.Component {
     constructor(props) {
@@ -18,7 +19,13 @@ class SkillsGrid extends React.Component {
         var component = this;
         return {
             onEditButtonClick(item, event) {
-                component.props.dispatch(editSkill(item))
+                component.props.dispatch(openSkillDetailsPopup(item))
+            },
+            onAddButtonClick(event) {
+                component.props.dispatch(openSkillDetailsPopup(new SkillModel()))
+            },
+            onDeleteButtonClick(item, event) {
+                component.props.dispatch(openSkillDeletePopup(item));
             }
         }
     }
@@ -35,7 +42,9 @@ class SkillsGrid extends React.Component {
 }
 
 SkillsGrid.propTypes = {
-    skills: PropTypes.array,
+    skills: PropTypes.arrayOf(
+        PropTypes.instanceOf(SkillModel)
+    ),
     dispatch: PropTypes.func.isRequired
 }
 

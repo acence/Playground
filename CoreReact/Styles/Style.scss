@@ -3,6 +3,11 @@
 body {
     font-family:Arial;
     font-size:16px;
+    padding:10px;
+}
+
+.modal {
+    background:rgba(0, 0, 0, 0.5);
 }
 
 .no-scrollbar .k-grid-header {
@@ -11,4 +16,14 @@ body {
 
 .no-scrollbar .k-grid-content {
     overflow-y: visible;
+}
+
+.loading-bar {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:6px;
+    background:blue;
+    z-index:10500;
 }

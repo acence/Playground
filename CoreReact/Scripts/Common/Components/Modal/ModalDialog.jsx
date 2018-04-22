@@ -5,9 +5,14 @@ class ModalDialog extends React.Component {
         super(props);
     }
     render() {
-        return (<div className='modal'>
-            {this.props.children}
-        </div>);
+        return (
+            <div className='modal' style={{ display: 'block' }}>
+                <div className='modal-dialog modal-dialog-centered'>
+                    <div className='modal-content'>
+                        {this.props.children}
+                    </div>
+                </div>
+            </div>);
     }
 }
 

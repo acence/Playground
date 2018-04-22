@@ -1,5 +1,7 @@
-﻿//
-function deepCompare(obj1, obj2) {
+﻿function deepCompare(obj1, obj2) {
+    if (!obj1 || !obj2) {
+        return false;
+    }
     for (var p in obj1) {
         if (typeof (obj1[p]) == 'function') { break; }
 
@@ -7,7 +9,7 @@ function deepCompare(obj1, obj2) {
 
         switch (typeof (obj1[p])) {
             case 'object':
-                if (!this.compare(obj1[p], obj2[p])) { return false; }
+                if (!deepCompare(obj1[p], obj2[p])) { return false; }
                 break;
             default:
                 if (obj1[p] !== obj2[p]) { return false; }
