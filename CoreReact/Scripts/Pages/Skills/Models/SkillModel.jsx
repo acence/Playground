@@ -1,31 +1,58 @@
-﻿class SkillModel {
+﻿import _ from 'underscore';
+import BaseModel from './../../../Common/Models/BaseModel';
+
+class SkillModel extends BaseModel {
     constructor(skill) {
-        if (!skill) {
-            this.id = 0;
-            this.name = '';
-            this.shortName = '';
-            this.foreColor = '';
-            this.category = '';
-            this.active = false;
-            this.email = '';
-            this.startDate = new Date();
-            this.startTime = 0;
-            this.length = 0;
-            this.percentage = 0;
-            this.calculationType = 0;
-        } else {
-            this.id = skill.id;
-            this.name = skill.name;
-            this.shortName = skill.shortName;
-            this.foreColor = skill.foreColor;
-            this.category = skill.category;
-            this.active = skill.active;
-            this.email = skill.email;
-            this.startDate = skill.startDate;
-            this.startTime = skill.startTime;
-            this.length = skill.length;
-            this.percentage = skill.percentage;
-            this.calculationType = skill.calculationType;
+        super(skill, SkillModel.fields);
+    }
+
+    static get fields() {
+        return {
+            id: {
+                type: 'int'
+            },
+            name: {
+                type: 'string',
+                validators: {
+                    required: true
+                }
+            },            
+            shortName: {
+                type: 'string',
+                validators: {
+                    required: true
+                }
+            },
+            foreColor: {
+                type: 'color'
+            },
+            category: {
+                type: 'string'
+            },
+            active: {
+                type: 'bool'
+            },
+            email: {
+                type: 'string',
+                validators: {
+                    email:true
+                }
+            },
+            startDate: {
+                type: 'date'
+            },
+            startTime: {
+                type: 'time'
+            },
+            length: {
+                type: 'int'
+            },
+            percentage: {
+                type: 'double'
+            },
+            calculationType: {
+                type: 'int'
+            }
         }
     }
 
@@ -33,12 +60,9 @@
         return 'id';
     }
 
+
     static transformList(skills) {
-        let transformed = [];
-        for (var skill of skills) {
-            transformed.push(new SkillModel(skill));
-        }
-        return transformed;
+        return super.transformList(skills, SkillModel);
     }
 }
 

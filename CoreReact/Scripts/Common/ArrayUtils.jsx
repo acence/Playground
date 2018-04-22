@@ -1,9 +1,11 @@
-﻿function addReplaceItem(list, item, identifier) {
+﻿import _ from 'underscore';
+
+function addReplaceItem(list, item, identifier) {
     if (!item) {
         return list;
     }
     let existingIndex = _.findIndex(list, function (current) {
-        return current[identifier] === current[identifier];
+        return current[identifier] === item[identifier];
     });
     if (existingIndex >= 0) {
         list = list.slice();
@@ -13,12 +15,12 @@
     }
     return list;
 }
-function removeItem(list, skill, identifier) {
+function removeItem(list, item, identifier) {
     if (!item) {
         return list;
     }
     let existingIndex = _.findIndex(list, function (current) {
-        return current[identifier] === current[identifier];
+        return current[identifier] === item[identifier];
     });
     if (existingIndex >= 0) {
         var tempList = list.slice();

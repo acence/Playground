@@ -20,9 +20,9 @@ function skillsReducer(state = initialState, action) {
         case actionTypes.DELETE_SKILL:
             return Object.assign({}, state, { selectedDeleteSkill: action.selectedSkill });
         case actionTypes.SAVE_SKILL_SUCCESS:
-            return Object.assign({}, state, { skillsList: addReplaceItem(state.skillsList, action.savedSkill, SkillModel.identifier), selectedSkill: null });
+            return Object.assign({}, state, { skillsList: addReplaceItem(state.skillsList, action.savedSkill, SkillModel.Identifier), selectedSkill: null });
         case actionTypes.DELETE_SKILL_SUCCESS:
-            return Object.assign({}, state, { skillsList: removeItem(state.skillsList, action.deletedSkill, SkillModel.identifier), selectedDeleteSkill: null });
+            return Object.assign({}, state, { skillsList: removeItem(state.skillsList, action.deletedSkill, SkillModel.Identifier), selectedDeleteSkill: null });
         case actionTypes.SAVE_SKILL_CANCEL:
             return Object.assign({}, state, { selectedSkill: null });
         case actionTypes.DELETE_SKILL_CANCEL:
