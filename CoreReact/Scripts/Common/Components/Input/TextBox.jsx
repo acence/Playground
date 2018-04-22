@@ -15,12 +15,18 @@ class TextBox extends React.Component {
     }
     render() {
         return (
+        <React.Fragment>
+            {
+                this.props.label &&
+                    <label>{this.props.label}</label>
+            }
             <input type='text'
                 className={this.props.className}
                 name={this.props.name}
                 value={this.props.value}
                 onChange={this.onChange}
-            />);
+                />
+        </React.Fragment>);
     }
 };
 TextBox.propTypes = {
