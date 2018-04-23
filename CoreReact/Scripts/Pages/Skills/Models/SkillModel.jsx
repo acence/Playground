@@ -43,6 +43,10 @@ class SkillModel extends BaseModel {
                 type: fieldTypes.string,
                 validators: [
                     {
+                        type: validatorTypes.required,
+                        message: 'Email is required'
+                    },
+                    {
                         type: validatorTypes.email,
                         message: 'Email is in incorrect format'
                     }

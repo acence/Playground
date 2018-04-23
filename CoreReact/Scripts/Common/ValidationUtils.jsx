@@ -1,4 +1,5 @@
 ﻿import _ from 'underscore';
+import { validatorTypes } from './Constants';
 
 function validateModel(model, fieldDefinitions) {
     let validationErrors = [];
@@ -9,15 +10,18 @@ function validateModel(model, fieldDefinitions) {
             var value = model[key];
             _.each(field.validators, function (validator) {
                 switch (validator.type) {
-                    case 'required':
+                    case validatorTypes.required:
                         //this format should be used if we need it to break on first validate
                         //isValid = isValid && validate(value, validateRequired, validationErrors, validator.message);
 
                         //this format should be used if we need to validate all fields
                         isValid = validate(value, validateRequired, validationErrors, validator.message) && isValid;
                         break;
-                    case 'email':
+                    case validatorTypes.email:
                         isValid = validate(value, validateEmail, validationErrors, validator.message) && isValid;
+                        break;
+                    case validatorTypes.custom:
+                        isValid = validate(value, validator.validateFunction, validationErrors, validator.message) && isValid;
                         break;
                 }
             });
