@@ -27,3 +27,9 @@ body {
     background:blue;
     z-index:10500;
 }
+
+.jq-toast-single {
+    &.error {
+        background: #a94442;
+    }
+}

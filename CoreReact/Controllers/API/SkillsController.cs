@@ -68,14 +68,12 @@ namespace CoreReact.Controllers.API
         [HttpGet]
         public IEnumerable<Skill> Get()
         {
-            System.Threading.Thread.Sleep(4000);
             return skills;
         }
 
         [HttpGet("{id}", Name = "Get")]
         public Skill Get(int id)
         {
-            System.Threading.Thread.Sleep(6000);
             return skills.FirstOrDefault(x => x.Id == id);
         }
 
@@ -89,7 +87,6 @@ namespace CoreReact.Controllers.API
             int id = skills.Max(x => x.Id) + 1;
             value.Id = id;
             skills.Add(value);
-            System.Threading.Thread.Sleep(7000);
             return value;
         }
 
@@ -103,7 +100,6 @@ namespace CoreReact.Controllers.API
             }
             skills.Remove(skill);
             skills.Add(value);
-            System.Threading.Thread.Sleep(7000);
             return value;
         }
 
@@ -115,7 +111,6 @@ namespace CoreReact.Controllers.API
             {
                 throw new Exception();
             }
-            System.Threading.Thread.Sleep(7000);
             skills.Remove(skill);
         }
     }

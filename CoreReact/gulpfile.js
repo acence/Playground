@@ -23,6 +23,8 @@ gulp.task('build:js-vendor', () => {
 
     gulp.src('./node_modules/jquery/dist/jquery.js')
         .pipe(gulp.dest('./wwwroot/lib'));
+    gulp.src('./node_modules/jquery-toast-plugin/dist/jquery.toast.min.js')
+            .pipe(gulp.dest('./wwwroot/lib'));
 
     gulp.src('./node_modules/bootstrap/dist/js/bootstrap.js')
         .pipe(gulp.dest('./wwwroot/lib'));
@@ -61,6 +63,8 @@ gulp.task('build:css-vendor', () => {
 
     gulp.src('./Styles/Vendor/kendo.common.css')
         .pipe(rename('kendo.css'))
+        .pipe(gulp.dest('./wwwroot/css'));
+    gulp.src('./Styles/Vendor/jquery.toast.css')
         .pipe(gulp.dest('./wwwroot/css'));
 });
 
