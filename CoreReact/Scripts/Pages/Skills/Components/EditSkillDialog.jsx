@@ -6,6 +6,7 @@ import Button from './../../../Common/Components/Input/Button';
 import TextBox from './../../../Common/Components/Input/TextBox';
 import ModalDialog from './../../../Common/Components/Modal/ModalDialog';
 import ModalDialogComponents from './../../../Common/Components/Modal/ModalDialogComponents';
+import { validateModel } from './../../../Common/ValidationUtils';
 import SkillModel from './../Models/SkillModel'
 import { saveSkill, saveSkillCancel } from './../Actions/Skills';
 
@@ -31,7 +32,11 @@ class EditSkillDialog extends React.Component {
         }
     }
     onSave() {
-        this.props.dispatch(saveSkill(Object.assign({}, this.state.selectedSkill)));
+        var modelState = validateModel(this.state.selectedSkill, SkillModel.fields);
+        console.log(modelState);
+        if (modelState.isValid) {
+            this.props.dispatch(saveSkill(Object.assign({}, this.state.selectedSkill)));
+        }
     }
     onCancel() {
         this.props.dispatch(saveSkillCancel());

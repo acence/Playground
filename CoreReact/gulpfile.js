@@ -71,6 +71,11 @@ gulp.task('build:css-sass', () => {
         .pipe(gulp.dest('./wwwroot/css'));
 });
 
+gulp.task('watch', function () {
+    gulp.watch('./Styles/**/*.scss', ['build:css-sass']);
+    gulp.watch('./Scripts/**/*.jsx', ['build:js-app']);
+}); 
+
 // helper functions
 var fixNameJSX = function (name) {
     name = name.replace(/^.*[\\\/]/, '');

@@ -75,7 +75,7 @@ class Grid extends React.Component {
                 if (options.showEditButton || options.showDeleteButton) {
                     var commands = [];
                     if (options.showEditButton) {
-                        commands.push({ name: "Edit", text: "Edit", click: self.editButtonClicked, iconName: "edit", template: icnOnly });
+                        commands.push({ name: "edit", text: "Edit", click: self.editButtonClicked, iconName: "edit", template: icnOnly });
                     }
                     if (options.showDeleteButton) {
                         commands.push({ name: "delete", text: 'Delete', click: self.deleteButtonClicked, iconName: "delete", template: icnOnly });

@@ -1,4 +1,5 @@
 ﻿import _ from 'underscore'
+import { fieldTypes } from './../Constants';
 
 class BaseModel {
     constructor(item, fields) {
@@ -19,17 +20,17 @@ class BaseModel {
             return fieldDescription.defaultValue;
         }
         switch (fieldDescription.type) {
-            case 'int':
-            case 'double':
-            case 'time':
+            case fieldTypes.int:
+            case fieldTypes.double:
+            case fieldTypes.time:
                 return 0;
-            case 'string':
+            case fieldTypes.string:
                 return '';
-            case 'bool':
+            case fieldTypes.bool:
                 return false;
-            case 'date':
+            case fieldTypes.date:
                 return new Date();
-            case 'color':
+            case fieldTypes.color:
                 return '#000000';
         }
         return undefined;
@@ -42,6 +43,11 @@ class BaseModel {
         }
         return transformed;
     }
+
+    static get Identifier() {
+        return 'id';
+    }
+
 }
 
 export default BaseModel;

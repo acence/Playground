@@ -1,4 +1,5 @@
 ﻿import _ from 'underscore';
+import { fieldTypes, validatorTypes } from './../../../Common/Constants';
 import BaseModel from './../../../Common/Models/BaseModel';
 
 class SkillModel extends BaseModel {
@@ -9,49 +10,58 @@ class SkillModel extends BaseModel {
     static get fields() {
         return {
             id: {
-                type: 'int'
+                type: fieldTypes.int
             },
             name: {
-                type: 'string',
-                validators: {
-                    required: true
-                }
+                type: fieldTypes.string,
+                validators: [
+                    {
+                        type: validatorTypes.required,
+                        message: 'Name is required'
+                    }
+                ]
             },            
             shortName: {
-                type: 'string',
-                validators: {
-                    required: true
-                }
+                type: fieldTypes.string,
+                validators: [
+                    {
+                        type: validatorTypes.required,
+                        message: 'Short name is required'
+                    }
+                ]
             },
             foreColor: {
-                type: 'color'
+                type: fieldTypes.color
             },
             category: {
-                type: 'string'
+                type: fieldTypes.string
             },
             active: {
-                type: 'bool'
+                type: fieldTypes.bool
             },
             email: {
-                type: 'string',
-                validators: {
-                    email:true
-                }
+                type: fieldTypes.string,
+                validators: [
+                    {
+                        type: validatorTypes.email,
+                        message: 'Email is in incorrect format'
+                    }
+                ]
             },
             startDate: {
-                type: 'date'
+                type: fieldTypes.date
             },
             startTime: {
-                type: 'time'
+                type: fieldTypes.time
             },
             length: {
-                type: 'int'
+                type: fieldTypes.int
             },
             percentage: {
-                type: 'double'
+                type: fieldTypes.double
             },
             calculationType: {
-                type: 'int'
+                type: fieldTypes.int
             }
         }
     }

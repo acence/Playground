@@ -1,9 +1,9 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getSkills, openSkillDetailsPopup, openSkillDeletePopup } from './../Actions/Skills';
+import Grid from './../../../Common/Components/Grid/Grid';
 import { gridColumns } from './../Constants';
-import Grid from './../../../Common/Components/Grid/Grid'
+import { getSkills, openSkillDetailsPopup, openSkillDeletePopup } from './../Actions/Skills';
 import SkillModel from './../Models/SkillModel';
 
 class SkillsGrid extends React.Component {
