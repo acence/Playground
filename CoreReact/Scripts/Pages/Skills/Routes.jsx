@@ -15,6 +15,6 @@ const skillRoutes = {
     deleteUrl(skill) {
         return '/api/' + 'skills/' + skill[SkillModel.Identifier];
     }
-}
+};
 
 export { skillRoutes };

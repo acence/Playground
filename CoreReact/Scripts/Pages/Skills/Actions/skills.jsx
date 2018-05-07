@@ -24,7 +24,7 @@ function openSkillDetailsPopup(skill) {
     return {
         type: actionTypes.EDIT_SKILL,
         selectedSkill: skill
-    }
+    };
 }
 
 function saveSkill(skill) {
@@ -45,27 +45,27 @@ function saveSkillSuccess(skill) {
     return {
         type: actionTypes.SAVE_SKILL_SUCCESS,
         savedSkill: new SkillModel(skill)
-    }
+    };
 }
 
 function saveSkillCancel() {
     return {
         type: actionTypes.SAVE_SKILL_CANCEL
-    }
+    };
 }
 
 function openSkillDeletePopup(skill) {
     return {
         type: actionTypes.DELETE_SKILL,
         selectedSkill: skill
-    }
+    };
 }
 
 function deleteSkill(skill) {
     return dispatch => {
         dispatch(uiActions.showLoading());
         return Ajax.delete(skillRoutes.deleteUrl(skill))
-            .then(function (response) {
+            .then(function () {
                 dispatch(uiActions.hideLoading());
                 dispatch(deleteSkillSuccess(skill));
             });
@@ -76,13 +76,13 @@ function deleteSkillSuccess(skill) {
     return {
         type: actionTypes.DELETE_SKILL_SUCCESS,
         deletedSkill: skill
-    }
+    };
 }
 
 function deleteSkillCancel() {
     return {
         type: actionTypes.DELETE_SKILL_CANCEL
-    }
+    };
 }
 
-export { getSkills, openSkillDetailsPopup, saveSkill, saveSkillCancel, openSkillDeletePopup, deleteSkill, deleteSkillCancel }
+export { getSkills, openSkillDetailsPopup, saveSkill, saveSkillCancel, openSkillDeletePopup, deleteSkill, deleteSkillCancel };

@@ -28,11 +28,14 @@ class TextBox extends React.Component {
                 />
         </React.Fragment>);
     }
-};
+}
+
 TextBox.propTypes = {
     className: PropTypes.string,
     name: PropTypes.string,
-    value: PropTypes.node
+    value: PropTypes.node,
+    label: PropTypes.string,
+    onChange: PropTypes.func
 };
 
 export default TextBox;

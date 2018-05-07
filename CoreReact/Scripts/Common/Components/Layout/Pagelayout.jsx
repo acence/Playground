@@ -1,4 +1,5 @@
 ﻿import React from 'react';
+import PropTypes from 'prop-types';
 
 class PageLayout extends React.Component {
     constructor(props) {
@@ -9,6 +10,10 @@ class PageLayout extends React.Component {
             {this.props.children}
         </div>);
     }
+}
+
+PageLayout.propTypes = {
+    children: PropTypes.node
 };
 
 export default PageLayout;

@@ -4,7 +4,7 @@
 function showMessage(title, message, type) {
     $.toast({
         text: message,
-        heading: title, 
+        heading: title,
         class: type,
         showHideTransition: 'fade',
         allowToastClose: true,

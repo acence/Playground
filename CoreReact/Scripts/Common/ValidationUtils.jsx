@@ -26,29 +26,29 @@ function validateModel(model, fieldDefinitions) {
                 }
             });
         }
-    })
+    });
     return { isValid, validationErrors };
 }
 
 function validate(value, validateFunction, validationErrors, message) {
     var valid = validateFunction(value);
     if (!valid) {
-        validationErrors.push(message)
+        validationErrors.push(message);
     }
     return valid;
 }
 
 function validateRequired(value) {
-    if (value == null || value == undefined) {
+    if (value === null || value === undefined) {
         return false;
     }
-    if (value.toString() == '') {
+    if (value.toString() === '') {
         return false;
     }
     return true;
 }
 
-function validateEmail(value) {
+function validateEmail(/*value*/) {
     //TODO
     return true;
 }

@@ -19,6 +19,6 @@
         if (typeof (obj1[q]) === 'undefined') { return false; }
     }
     return true;
-};
+}
 
-export { deepCompare }
+export { deepCompare };

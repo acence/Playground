@@ -20,4 +20,4 @@ const gridColumns = [
 export {
     actionTypes,
     gridColumns
-}
+};

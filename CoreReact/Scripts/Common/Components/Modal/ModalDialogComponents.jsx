@@ -1,4 +1,5 @@
 ﻿import React from 'react';
+import PropTypes from 'prop-types';
 
 class Header extends React.Component {
     constructor(props) {
@@ -9,6 +10,10 @@ class Header extends React.Component {
             {this.props.children}
         </div>);
     }
+}
+
+Header.propTypes = {
+    children: PropTypes.node
 };
 
 class Body extends React.Component {
@@ -20,6 +25,10 @@ class Body extends React.Component {
             {this.props.children}
         </div>);
     }
+}
+
+Body.propTypes = {
+    children: PropTypes.node
 };
 
 
@@ -32,6 +41,10 @@ class Footer extends React.Component {
             {this.props.children}
         </div>);
     }
+}
+
+Footer.propTypes = {
+    children: PropTypes.node
 };
 
 

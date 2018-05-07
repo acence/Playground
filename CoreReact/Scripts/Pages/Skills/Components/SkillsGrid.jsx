@@ -18,16 +18,16 @@ class SkillsGrid extends React.Component {
     get gridOptions() {
         var component = this;
         return {
-            onEditButtonClick(item, event) {
-                component.props.dispatch(openSkillDetailsPopup(item))
+            onEditButtonClick(item /*event*/) {
+                component.props.dispatch(openSkillDetailsPopup(item));
             },
-            onAddButtonClick(event) {
-                component.props.dispatch(openSkillDetailsPopup(new SkillModel()))
+            onAddButtonClick(/*event*/) {
+                component.props.dispatch(openSkillDetailsPopup(new SkillModel()));
             },
-            onDeleteButtonClick(item, event) {
+            onDeleteButtonClick(item /*event*/) {
                 component.props.dispatch(openSkillDeletePopup(item));
             }
-        }
+        };
     }
 
     render() {
@@ -46,7 +46,7 @@ SkillsGrid.propTypes = {
         PropTypes.instanceOf(SkillModel)
     ),
     dispatch: PropTypes.func.isRequired
-}
+};
 
 function mapStateToProps(state) {
     return {

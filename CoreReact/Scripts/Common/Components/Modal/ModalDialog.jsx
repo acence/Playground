@@ -1,4 +1,5 @@
 ﻿import React from 'react';
+import PropTypes from 'prop-types';
 
 class ModalDialog extends React.Component {
     constructor(props) {
@@ -15,5 +16,9 @@ class ModalDialog extends React.Component {
             </div>);
     }
 }
+
+ModalDialog.propTypes = {
+    children: PropTypes.node
+};
 
 export default ModalDialog;

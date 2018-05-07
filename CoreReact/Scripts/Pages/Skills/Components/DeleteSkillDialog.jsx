@@ -5,6 +5,7 @@ import { deepCompare } from './../../../Common/CompareUtils';
 import Button from './../../../Common/Components/Input/Button';
 import ModalDialog from './../../../Common/Components/Modal/ModalDialog';
 import ModalDialogComponents from './../../../Common/Components/Modal/ModalDialogComponents';
+import SkillModel from './../Models/SkillModel';
 import { deleteSkill, deleteSkillCancel } from './../Actions/Skills';
 
 class DeleteSkillDialog extends React.Component {
@@ -24,7 +25,7 @@ class DeleteSkillDialog extends React.Component {
         if (!deepCompare(nextProps.selectedSkill, this.props.selectedSkill)) {
             this.setState({
                 selectedSkill: Object.assign({}, nextProps.selectedSkill)
-            })
+            });
         }
     }
     onDelete() {
@@ -68,8 +69,9 @@ function mapStateToProps(state) {
         selectedSkill: state.skills.selectedDeleteSkill
     };
 }
-//DeleteSkillDialog.propTypes = {
-//    selectedSkill: PropTypes.instanceOf(SkillModel)
-//}
+DeleteSkillDialog.propTypes = {
+    selectedSkill: PropTypes.instanceOf(SkillModel),
+    dispatch: PropTypes.func.isRequired
+};
 
-export default connect(mapStateToProps)(DeleteSkillDialog)
+export default connect(mapStateToProps)(DeleteSkillDialog);

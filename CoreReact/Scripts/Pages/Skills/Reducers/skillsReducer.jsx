@@ -1,5 +1,4 @@
 ﻿import { actionTypes } from '../Constants';
-import _ from 'underscore';
 import { addReplaceItem, removeItem } from './../../../Common/ArrayUtils';
 import SkillModel from './../Models/SkillModel';
 
@@ -7,7 +6,7 @@ const initialState = {
     skillsList: [],
     selectedSkill: null,
     selectedDeleteSkill: null
-}
+};
 
 function skillsReducer(state = initialState, action) {
     switch (action.type) {

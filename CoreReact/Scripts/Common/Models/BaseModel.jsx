@@ -1,4 +1,4 @@
-﻿import _ from 'underscore'
+﻿import _ from 'underscore';
 import { fieldTypes } from './../Constants';
 
 class BaseModel {
@@ -7,11 +7,11 @@ class BaseModel {
         if (!item) {
             _.mapObject(fields, function (val, key) {
                 self[key] = self.getBaseValue(val);
-            })
+            });
         } else {
             _.mapObject(fields, function (val, key) {
                 self[key] = item[key];
-            })
+            });
         }
     }
 

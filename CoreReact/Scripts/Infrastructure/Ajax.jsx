@@ -3,9 +3,9 @@
 class Ajax {
     static executeRequest(method, url, data) {
         return axios[method](url, data)
-            .catch(function (error) {
-                console.log(error);
-            })
+            .catch(function () { //parameters: error
+                //console.log(error);
+            });
     }
 
     static get(url) {

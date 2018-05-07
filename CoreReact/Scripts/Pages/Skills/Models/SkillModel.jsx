@@ -1,5 +1,4 @@
-﻿import _ from 'underscore';
-import { fieldTypes, validatorTypes } from './../../../Common/Constants';
+﻿import { fieldTypes, validatorTypes } from './../../../Common/Constants';
 import BaseModel from './../../../Common/Models/BaseModel';
 
 class SkillModel extends BaseModel {
@@ -20,7 +19,7 @@ class SkillModel extends BaseModel {
                         message: 'Name is required'
                     }
                 ]
-            },            
+            },
             shortName: {
                 type: fieldTypes.string,
                 validators: [
@@ -67,7 +66,7 @@ class SkillModel extends BaseModel {
             calculationType: {
                 type: fieldTypes.int
             }
-        }
+        };
     }
 
     static get Identifier() {

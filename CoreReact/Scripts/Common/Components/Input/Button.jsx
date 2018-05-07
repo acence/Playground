@@ -10,7 +10,7 @@ class Button extends React.Component {
 
     onClick(e) {
         if (_.isFunction(this.props.onClick)) {
-            this.props.onClick(e)
+            this.props.onClick(e);
         }
     }
     render() {
@@ -19,10 +19,12 @@ class Button extends React.Component {
                 {this.props.children}
             </button>);
     }
-};
+}
 
 Button.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    onClick: PropTypes.func,
+    className: PropTypes.string
 };
 
 export default Button;

@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
-import { deepCompare } from './../../CompareUtils'
+import { deepCompare } from './../../CompareUtils';
 
 class Grid extends React.Component {
     constructor(props) {
@@ -36,9 +36,9 @@ class Grid extends React.Component {
     }
 
     getDataItemFromKendoGrid(e) {
-        return this.kendoControl.dataItem($(e.target).closest('tr'))
+        return this.kendoControl.dataItem($(e.target).closest('tr'));
     }
-    
+
     addButtonClicked(e) {
         e.preventDefault();
         if (_.isFunction(this.state.options.onAddButtonClick)) {
@@ -63,7 +63,7 @@ class Grid extends React.Component {
             showAddButton: true,
             showEditButton: true,
             showDeleteButton: true
-        }
+        };
     }
 
     get helpers() {
@@ -94,7 +94,7 @@ class Grid extends React.Component {
                 }
                 return null;
             }
-        }
+        };
     }
 
     render() {
@@ -117,6 +117,6 @@ Grid.propTypes = {
         editButtonAction: PropTypes.func,
         deleteButtonAction: PropTypes.func
     })
-}
+};
 
 export default Grid;

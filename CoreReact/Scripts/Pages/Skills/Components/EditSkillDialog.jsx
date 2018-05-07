@@ -8,7 +8,7 @@ import ModalDialog from './../../../Common/Components/Modal/ModalDialog';
 import ModalDialogComponents from './../../../Common/Components/Modal/ModalDialogComponents';
 import { validateModel } from './../../../Common/ValidationUtils';
 import Notifications from './../../../Common/NotificationUtils';
-import SkillModel from './../Models/SkillModel'
+import SkillModel from './../Models/SkillModel';
 import { saveSkill, saveSkillCancel } from './../Actions/Skills';
 
 class EditSkillDialog extends React.Component {
@@ -29,7 +29,7 @@ class EditSkillDialog extends React.Component {
         if (!deepCompare(nextProps.selectedSkill, this.props.selectedSkill)) {
             this.setState({
                 selectedSkill: Object.assign({}, nextProps.selectedSkill)
-            })
+            });
         }
     }
     onSave() {
@@ -109,8 +109,9 @@ function mapStateToProps(state) {
         selectedSkill: state.skills.selectedSkill
     };
 }
-//EditSkillDialog.propTypes = {
-//    selectedSkill: PropTypes.instanceOf(SkillModel)
-//}
+EditSkillDialog.propTypes = {
+    selectedSkill: PropTypes.instanceOf(SkillModel),
+    dispatch: PropTypes.func.isRequired
+};
 
-export default connect(mapStateToProps)(EditSkillDialog)
+export default connect(mapStateToProps)(EditSkillDialog);

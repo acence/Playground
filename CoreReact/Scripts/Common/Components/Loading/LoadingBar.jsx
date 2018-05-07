@@ -13,7 +13,7 @@ class LoadingBar extends React.Component {
 
 LoadingBar.propTypes = {
     showLoading: PropTypes.bool
-}
+};
 
 function mapStateToProps(state) {
     return {
